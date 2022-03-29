@@ -28,7 +28,8 @@ sudo apt-get install -y nodejs
 ssh-keygen -t rsa -b 2048 -C "your@email.address"
 
 # Configure your ssh config for Gitlab
-$ code ~/.ssh/config
+cd ~/.ssh
+code .
 
 # GitLab.com
 Host gitlab.com
