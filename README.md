@@ -51,8 +51,8 @@ code .
 ## Postgres
 ```bash
 # update packages list and install
-sudo apt update && sudo apt upgrade –y
 echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
+sudo apt update
 sudo apt install postgis postgresql-13-postgis-3
 
 # make sure your local user can log in 
