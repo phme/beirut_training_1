@@ -46,8 +46,9 @@ git clone git@gitlab.com:MasaeAnalytics/common/yemen_emis/yemen_emis_training_be
 # Open it in VS Code
 cd yemen_emis_training_beirut
 code .
+```
 
-# Postgres
+## Postgres
 ```bash
 # update packages list and install
 sudo apt update && sudo apt upgrade –y
