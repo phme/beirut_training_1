@@ -74,4 +74,18 @@ psql –d postgres
 # add local user
 postgres=# create role xxxxx with superuser createdb createrole login encrypted password ‘xxxxxxx’;
 postgres=# \q
-exit
+
+# reconnect to postgres database with local user
+psql –d postgres
+
+# create a new database
+postgres=# create database dvdrental
+
+# unzip and restore demo database
+cd postgres
+unzip dvdrental.zip
+pg_restore -d dvdrental dvdrental.tar
+# connect to dvdrental database and test a query
+psql –d dvdrental
+postgres=# select * from actor;
+```
