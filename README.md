@@ -16,6 +16,6 @@ source ~/.bashrc
 # install python 3.9.10 in pyenv
 pyenv install 3.9.10
 
-curl https://deb.nodesource.com/setup_16.x | sudo -E bash –
+curl https://deb.nodesource.com/setup_16.x | sudo -E bash
 sudo apt-get install -y nodejs
 ```
