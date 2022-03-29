@@ -21,3 +21,27 @@ curl https://deb.nodesource.com/setup_16.x | sudo -E bash –
 sudo apt-get install -y nodejs
 
 ```
+
+## Create gitlab account and ssh key pair
+```bash
+# Generate an SSH key pair
+ssh-keygen -t rsa -b 2048 -C "your@email.address"
+
+# Configure your ssh config for Gitlab
+$ code ~/.ssh/config
+
+# GitLab.com
+Host gitlab.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa
+
+# Add your ssh key to your Gitlab account
+
+# Verify you can connect
+ssh -T git@gitlab.example.com
+
+# Clone the training repository
+git clone git@gitlab.com:MasaeAnalytics/common/yemen_emis/yemen_emis_training_beirut.git
+# Open it in VS Code
+cd yemen_emis_training_beirut
+code .
