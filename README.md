@@ -46,3 +46,31 @@ git clone git@gitlab.com:MasaeAnalytics/common/yemen_emis/yemen_emis_training_be
 # Open it in VS Code
 cd yemen_emis_training_beirut
 code .
+
+# Postgres
+```bash
+# update packages list and install
+sudo apt update && sudo apt upgrade –y
+echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
+sudo apt install postgis postgresql-13-postgis-3
+
+# make sure your local user can log in 
+cd /etc/postgresql/13/main/
+sudo code pg_hba.conf
+
+# Change peer to trust for local host
+local     all	all	trust
+host      all       all     127.0.0.1/32    trust
+host      all       all     ::1/128         trust
+
+# start service
+sudo service postgresql start
+
+# connect to the postgres database with user postgres
+sudo su – postgres
+psql –d postgres
+
+# add local user
+postgres=# create role xxxxx with superuser createdb createrole login encrypted password ‘xxxxxxx’;
+postgres=# \q
+exit
